@@ -1,0 +1,216 @@
+/* Root variable definitions for enhanced theme management */
+:root {
+    --primary-color: #35424a; /* Dark bluish-grey for primary UI elements */
+    --secondary-color: #e74c3c; /* Bright red for accents and call-to-action elements */
+    --background-color: #f4f4f4; /* Light grey background for reducing eye strain */
+    --text-color: #333; /* Dark grey for primary text for better readability */
+    --link-color: #ffffff; /* White for links for contrast against the primary color */
+    --hover-color: #d62d20; /* Dark red for hover states to ensure adequate contrast */
+    --font-stack: 'Roboto', sans-serif; /* Modern, readable font stack */
+    --border-radius: 8px; /* Rounded corners for all elements */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadows for depth */
+    --transition-speed: 0.3s; /* Smooth transitions for interactive elements */
+    --heading-font: 'Montserrat', sans-serif; /* Stylish font for headings */
+    --secondary-bg-color: #fff; /* White background for secondary elements */
+    --muted-text-color: #666; /* Muted grey for less important text */
+    --focus-outline: 4px dashed var(--secondary-color); /* Enhanced focus outline */
+}
+
+/* Reset default styles for a clean slate */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-stack);
+    -webkit-font-smoothing: antialiased; /* Enhance text rendering on webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Enhance text rendering on Firefox for Mac */
+}
+
+/* Global styles ensuring a consistent base */
+body {
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-stack);
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Header styles with responsive typography */
+header {
+    background-color: var(--primary-color);
+    color: var(--link-color);
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    font-size: calc(2rem + 1vw); /* Responsive font size for header */
+    margin: 0; /* Remove default margin */
+}
+
+/* Sticky navigation with visual feedback */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--primary-color);
+    box-shadow: var(--box-shadow); /* Add shadow to nav for depth */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0; /* Add padding to nav */
+    margin: 0; /* Remove default margin */
+}
+
+nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px; /* Add padding for better click area */
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+nav a:hover, nav a:focus {
+    background-color: var(--hover-color);
+    color: var(--background-color);
+    outline: none; /* Remove focus outline when specifically interacting via mouse */
+}
+
+/* Main content area styling */
+main {
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 20px;
+    background: var(--secondary-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Section styles for structured layout */
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    font-family: var(--heading-font);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    border-bottom: 4px solid var(--secondary-color);
+    padding-bottom: 0.5rem; /* Add padding for spacing */
+}
+
+/* Footer with a fixed position at the bottom */
+footer {
+    background-color: var(--primary-color);
+    color: var(--link-color);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Enhancements for larger screens */
+@media (min-width: 768px) {
+    main {
+        max-width: 75%;
+    }
+
+    nav ul {
+        padding: 0 20px;
+    }
+
+    nav ul li {
+        padding: 0 20px;
+    }
+}
+
+/* Styling for course cards */
+.course {
+    background-color: var(--secondary-bg-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed); /* Add transition for hover effects */
+}
+
+.course:hover {
+    transform: translateY(-5px); /* Lift the card slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.course h3 {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    margin-bottom: 10px; /* Add margin for spacing */
+}
+
+.course p {
+    color: var(--muted-text-color);
+    margin-bottom: 10px; /* Add margin for spacing */
+}
+
+.course a {
+    display: inline-block; /* Make the link inline-block */
+    background-color: var(--secondary-color);
+    color: var(--link-color);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color var(--transition-speed), transform var(--transition-speed); /* Add transition for hover effects */
+}
+
+.course a:hover {
+    background-color: #c0392b; /* Slightly darker shade on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Enhanced accessibility for interactive elements */
+a:focus, button:focus, input:focus {
+    outline: var(--focus-outline);
+    outline-offset: 4px;
+}
+
+/* Additional styles for buttons */
+button {
+    background-color: var(--secondary-color);
+    color: var(--link-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed); /* Add transition for hover effects */
+}
+
+button:hover, button:focus {
+    background-color: #c0392b; /* Slightly darker shade on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Add responsive typography */
+body {
+    font-size: 1rem; /* Base font size */
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 1.125rem; /* Slightly larger font size for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.25rem; /* Larger font size for even larger screens */
+    }
+}

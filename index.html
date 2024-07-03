@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Interactive electrical engineering courses, tutorials, labs, and quizzes tailored for all levels from beginners to advanced learners. Explore electrical concepts with dynamic content and hands-on learning experiences.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Electrical Engineering Educational Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="main.js"></script>
+    <script defer src="resourcemanager.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Electrical Engineering Educational Platform</h1>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="#courses" aria-controls="courses">Courses</a></li>
+                    <li><a href="#tutorials" aria-controls="tutorials">Tutorials</a></li>
+                    <li><a href="#labs" aria-controls="labs">Labs</a></li>
+                    <li><a href="#quizzes" aria-controls="quizzes">Quizzes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="search-container">
+            <label for="searchInput" class="visually-hidden">Search through site content</label>
+            <input type="text" id="searchInput" placeholder="Search courses, tutorials, and more..." aria-label="Search through site content">
+            <button onclick="searchFunction()">Search</button>
+        </div>
+        <section id="courses" aria-labelledby="courses-heading">
+            <h2 id="courses-heading">Courses</h2>
+            <p>Explore our comprehensive courses designed to equip you with the knowledge needed for a career in electrical engineering.</p>
+            <a href="https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law/all" target="_blank" rel="noopener noreferrer">Learn More about Circuit Analysis</a>
+        </section>
+        <section id="tutorials" aria-labelledby="tutorials-heading">
+            <h2 id="tutorials-heading">Tutorials</h2>
+            <p>Dive into hands-on tutorials to apply your learning in practical scenarios.</p>
+            <iframe title="Soldering Basics Video" width="560" height="315" src="https://www.youtube.com/embed/r-SCyD7f_zI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <section id="labs" aria-labelledby="labs-heading">
+            <h2 id="labs-heading">Labs</h2>
+            <p>Engage in virtual lab experiences to simulate real-world electrical engineering tasks.</p>
+        </section>
+        <section id="quizzes" aria-labelledby="quizzes-heading">
+            <h2 id="quizzes-heading">Quizzes</h2>
+            <p>Test your knowledge with quizzes designed to challenge and reinforce your learning.</p>
+        </section>
+        <section id="faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Frequently Asked Questions</h2>
+            <dl>
+                <dt>What prerequisites do I need for advanced courses?</dt>
+                <dd>Advanced courses require a solid understanding of basic electrical engineering concepts covered in our beginner courses.</dd>
+                <dt>How can I access the lab tools online?</dt>
+                <dd>Lab tools are available through the lab section, accessible after enrolling in the respective courses.</dd>
+            </dl>
+        </section>
+        <section id="feedback" aria-labelledby="feedback-heading">
+            <h2 id="feedback-heading">Feedback</h2>
+            <form action="/submit-feedback" method="POST">
+                <label for="feedback-text">Your Feedback:</label>
+                <textarea id="feedback-text" name="feedback" required placeholder="Type your feedback here..." rows="4"></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Electrical Engineering Educational Platform. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
